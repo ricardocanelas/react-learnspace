@@ -68,3 +68,39 @@ class A extends Component {
 
 - [Context](https://reactjs.org/docs/context.html)
 - [Legacy-Context](https://reactjs.org/docs/legacy-context.html)
+
+## Changelog
+
+### .V1
+Create the compound component
+
+### .V2
+
+- Problem: moved sub-component (e.g: `<Toggle.On>`) to in a sub-element (e.g: `<div>...</div>`)
+- Solution: Added more flexibility with Context
+
+### .V3
+
+- Problem: create your own button, but using the logic of the component
+- Solution: Added a HOC 'withToggle'
+
+### .V4
+
+- Problem: using the same property of the context
+- Solution: Added a variable called 'toggleContext' to our context, with this we don't have problem with overide our properties
+
+### .V5
+
+- Problem: when inspect the code using the React devtools, the name of the elements/components are the same.
+- Solution: add `Component.displayName = ''` in your custom component and added displayName in withToggle (line: 33). Also create a variable separete for the components of use the withToggle (line: 38, 39, 40)
+
+### .V6
+
+- Problem: when a HOC component need create a ref.
+- Solution: Create a new property `innerRef`
+
+### .V7
+
+- Problem: when we have our own custom component (Toggle) and there are new statics methods, the 'withToggle' not recognize or not overwrite.
+- Solution: use the `Hoist Non React Statics` library
+- Extra: [Static methods must be copied over](https://reactjs.org/docs/higher-order-components.html#static-methods-must-be-copied-over)
