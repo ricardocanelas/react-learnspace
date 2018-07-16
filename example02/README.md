@@ -4,7 +4,7 @@ This is a simple example how you can make a compound component.
 
 ## How it works
 
-In this case we are using [Context](https://reactjs.org/docs/context.html), which is a way to pass data through the component tree without having to pass props down manually at every level.
+In this case we are using the [Legacy Context](https://reactjs.org/docs/legacy-context.html) API, which is a way to pass data through the component tree without having to pass props down manually at every level.
 
 Context provides a way to share values like these between components without having to explicitly pass a prop through every level of the tree.
 
