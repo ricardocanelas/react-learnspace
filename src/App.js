@@ -1,21 +1,42 @@
 import React, { Component } from 'react';
+import loading from './loading.gif'
 
 const list = {
-  e01: { title: 'HOC - Higher-Order Components', src: React.lazy(() => import('./examples/e01/index')) },
-  e02: { title: 'Render Props', src: React.lazy(() => import('./examples/e02/index')) },
+  e01: { id: 'e01', title: 'HOC - Higher-Order Components', src: React.lazy(() => import('./examples/e01/index')) },
+  e02: { id: 'e02', title: 'Render Props', src: React.lazy(() => import('./examples/e02/index')) },
 }
 
-let SourceComponent = list.e01.src;
+let SourceComponent;
+
+const Loading = () => {
+  return (
+    <div className='app-loading'>
+      <img alt="loading" src={loading} />
+      <div>Loading...</div>
+    </div>
+  )
+}
+
+const Welcome = () => {
+  return (
+    <div className='app-welcome'>
+      <div className='title'>
+        Learnspace
+      </div>
+    </div>
+  )
+}
 
 class App extends Component {
 
   state = {
-    current: list.e01.src
+    current: null
   }
 
   handleSelect = (e) => {
-    SourceComponent = list[e.target.value].src;
-    this.setState({ current: list[e.target.value] })
+    const item = list[e.target.value];
+    SourceComponent = item ? item.src : SourceComponent;
+    this.setState({ current: item })
   }
 
   renderOptions() {
@@ -29,8 +50,13 @@ class App extends Component {
   }
 
   render() {
+    const { current } = this.state;
+    const classes = ['example-container'];
+    if(current) classes.push(`app-${current.id}`)
+    else classes.push('welcome')
+
     return (
-      <div>
+      <React.Fragment>
         <header>
           <div className="brand">
             Learnspace
@@ -42,12 +68,15 @@ class App extends Component {
             </select>
           </div>
         </header>
-        <div className="example-container">
-          <React.Suspense fallback={<div>Loading...</div>}>
-            <SourceComponent data={this.state.current} />
-          </React.Suspense>
+        <div className={classes.join(' ')}>
+          {current && (
+            <React.Suspense fallback={<Loading />}>
+              <SourceComponent data={current} />
+            </React.Suspense>
+          )}
+          {!current && (<Welcome />)}
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
