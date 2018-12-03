@@ -4,6 +4,7 @@ import loading from './loading.gif'
 const list = {
   e01: { id: 'e01', title: 'HOC - Higher-Order Components', src: React.lazy(() => import('./examples/e01/index')) },
   e02: { id: 'e02', title: 'Render Props', src: React.lazy(() => import('./examples/e02/index')) },
+  e03: { id: 'e03', title: 'Context', src: React.lazy(() => import('./examples/e03/index')) },
 }
 
 let SourceComponent;
