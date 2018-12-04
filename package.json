@@ -15,6 +15,8 @@
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-prettier": "^3.0.0",
     "gh-pages": "^2.0.1",
+    "husky": "^1.2.0",
+    "lint-staged": "^8.1.0",
     "prettier": "^1.15.3"
   },
   "scripts": {
@@ -25,7 +27,8 @@
     "cleanup": "rm -rf node_modules/gh-pages/.cache",
     "deploy": "npm run build && gh-pages -d build",
     "lint": "eslint src",
-    "lint:fix": "eslint src --fix"
+    "lint:fix": "eslint src --fix",
+    "lint-staged": "lint-staged"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,5 +38,17 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,md,css,scss}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  }
 }
