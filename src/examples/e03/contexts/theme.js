@@ -20,17 +20,11 @@ export const themes = {
 
 export const Context = React.createContext({
     theme: themes.dark,
-    toggleTheme: () => { }
+    toggleTheme: () => {},
 })
 
-export const withTheme = (Component) => (props) => {
-    return (
-        <Context.Consumer>
-            {({ theme }) => (
-                <Component {...props} theme={theme} />
-            )}
-        </Context.Consumer>
-    )
+export const withTheme = Component => props => {
+    return <Context.Consumer>{({ theme }) => <Component {...props} theme={theme} />}</Context.Consumer>
 }
 
-export default Context;
+export default Context

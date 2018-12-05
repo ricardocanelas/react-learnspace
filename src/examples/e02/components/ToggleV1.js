@@ -1,5 +1,5 @@
 import React from 'react'
-import Switch from './Switch';
+import Switch from './Switch'
 
 function ToggleOn({ on, children }) {
     return on ? children : null
@@ -19,29 +19,30 @@ class Toggle extends React.Component {
     static Button = ToggleButton
 
     state = {
-        on: this.props.on || false
+        on: this.props.on || false,
     }
 
     handleClick = () => {
-        this.setState((prevState) => ({
-            on: !prevState.on
-        }), () => {
-            this.props.onToggle(this.state.on)
-        })
+        this.setState(
+            prevState => ({
+                on: !prevState.on,
+            }),
+            () => {
+                this.props.onToggle(this.state.on)
+            }
+        )
     }
 
     render() {
-        const children = React.Children.map(this.props.children, (child) => {
+        const children = React.Children.map(this.props.children, child => {
             return React.cloneElement(child, { on: this.state.on, onClick: this.handleClick })
         })
-        return (
-            <div>{children}</div>
-        )
+        return <div>{children}</div>
     }
 }
 
 Toggle.defaultProps = {
-    onClick: (on) => { }
+    onClick: on => {},
 }
 
 export default Toggle

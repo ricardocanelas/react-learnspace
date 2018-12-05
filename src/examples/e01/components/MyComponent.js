@@ -1,7 +1,7 @@
 import React from 'react'
-import { withCounter } from './Counter';
+import { withCounter } from './Counter'
 
-const MyComponent = (props) => {
+const MyComponent = props => {
     return (
         <div>
             Counter: {props.counter}

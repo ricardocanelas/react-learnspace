@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Switch from './Switch';
+import Switch from './Switch'
 
 const TOGGLE_CONTEXT = '__toggle__'
 
@@ -23,16 +23,10 @@ const ToggleButton = props => {
 export function withToggle(Component) {
     function Wrapper({ innerRef, ...props }, context) {
         const toggleContext = context[TOGGLE_CONTEXT]
-        return (
-            <Component
-                ref={innerRef}
-                toggleContext={toggleContext}
-                {...props}
-            />
-        )
+        return <Component ref={innerRef} toggleContext={toggleContext} {...props} />
     }
     Wrapper.contextTypes = {
-        [TOGGLE_CONTEXT]: PropTypes.object.isRequired
+        [TOGGLE_CONTEXT]: PropTypes.object.isRequired,
     }
     Wrapper.displayName = `withToggle(${Component.displayName || Component.name})`
     return Wrapper
@@ -43,39 +37,40 @@ class Toggle extends React.Component {
     static Off = withToggle(ToggleOff)
     static Button = withToggle(ToggleButton)
     static childContextTypes = {
-        [TOGGLE_CONTEXT]: PropTypes.object.isRequired
+        [TOGGLE_CONTEXT]: PropTypes.object.isRequired,
     }
 
     state = {
-        on: this.props.on || false
+        on: this.props.on || false,
     }
 
     getChildContext() {
         return {
             [TOGGLE_CONTEXT]: {
                 on: this.state.on,
-                onClick: this.handleClick
-            }
+                onClick: this.handleClick,
+            },
         }
     }
 
     handleClick = () => {
-        this.setState((prevState) => ({
-            on: !prevState.on
-        }), () => {
-            this.props.onToggle(this.state.on)
-        })
+        this.setState(
+            prevState => ({
+                on: !prevState.on,
+            }),
+            () => {
+                this.props.onToggle(this.state.on)
+            }
+        )
     }
 
     render() {
-        return (
-            <div>{this.props.children || <Toggle.Button />}</div>
-        )
+        return <div>{this.props.children || <Toggle.Button />}</div>
     }
 }
 
 Toggle.defaultProps = {
-    onClick: (on) => { }
+    onClick: on => {},
 }
 
 export default Toggle
