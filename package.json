@@ -17,6 +17,7 @@
     "gh-pages": "^2.0.1",
     "husky": "^1.2.0",
     "lint-staged": "^8.1.0",
+    "node-sass": "^4.10.0",
     "prettier": "^1.15.3",
     "stylelint": "^9.9.0",
     "stylelint-config-recommended": "^2.1.0"
@@ -28,7 +29,8 @@
     "eject": "react-scripts eject",
     "cleanup": "rm -rf node_modules/gh-pages/.cache",
     "deploy": "npm run build && gh-pages -d build",
-    "stylelint": "stylelint",
+    "stylelint": "stylelint src/**/*.{css,scss}",
+    "stylelint:fix": "stylelint src/**/*.{css,scss} --fix",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "lint-staged": "lint-staged"
