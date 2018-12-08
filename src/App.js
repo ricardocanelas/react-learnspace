@@ -5,6 +5,7 @@ const list = {
     e01: { id: 'e01', title: 'HOC - Higher-Order Components', src: React.lazy(() => import('./examples/e01/index')) },
     e02: { id: 'e02', title: 'Render Props', src: React.lazy(() => import('./examples/e02/index')) },
     e03: { id: 'e03', title: 'Context', src: React.lazy(() => import('./examples/e03/index')) },
+    e04: { id: 'e04', title: 'Lifting State Up', src: React.lazy(() => import('./examples/e04/index')) },
 }
 
 let SourceComponent

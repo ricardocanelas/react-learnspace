@@ -1,0 +1,26 @@
+.example-container.app-e04 {
+    padding: 20px 0 0 20px;
+    h1{
+        font-size: 30px;
+        font-weight: bold;
+    }
+    small{
+        display: inline-block;
+        margin-bottom: 18px;
+        font-size: 12px;
+        color: gray;
+    }
+    .currency {
+        margin-bottom: 12px;
+        label{
+            width: 40px;
+            display: inline-block;
+            padding: 0 10px 0 0;
+            text-align: right;
+        }
+        input {
+            padding: 5px;
+            width: 120px;
+        }
+    }
+}
