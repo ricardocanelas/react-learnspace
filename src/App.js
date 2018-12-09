@@ -8,7 +8,11 @@ const list = {
     e04: { id: 'e04', title: 'Lifting State Up', src: React.lazy(() => import('./examples/e04/index')) },
 }
 
-let SourceComponent
+const config = localStorage.getItem('learnspace-config')
+    ? JSON.parse(localStorage.getItem('learnspace-config'))
+    : { selected: null }
+
+let SourceComponent = config.selected ? list[config.selected].src : null
 
 const Loading = () => {
     return (
@@ -29,20 +33,22 @@ const Welcome = () => {
 
 class App extends Component {
     state = {
-        current: null,
+        current: config.selected ? list[config.selected] : null,
     }
 
     handleSelect = e => {
         const item = list[e.target.value]
         SourceComponent = item ? item.src : SourceComponent
         this.setState({ current: item })
+        localStorage.setItem('learnspace-config', JSON.stringify({ selected: e.target.value }))
     }
 
-    renderOptions() {
+    renderOptions = () => {
+        const current_id = this.state.current ? this.state.current.id : null
         return Object.keys(list).map(key => {
             return (
-                <option key={key} value={key}>
-                    {list[key].title}
+                <option key={key} value={key} selected={current_id === key}>
+                    {list[key].title} ({})
                 </option>
             )
         })
