@@ -20,8 +20,8 @@ self.__precacheManifest = [
     "url": "/react-learnspace/static/js/2.8c70f8f8.chunk.js"
   },
   {
-    "revision": "594302e45e0ed59b76e4",
-    "url": "/react-learnspace/static/js/runtime~main.594302e4.js"
+    "revision": "cb71cd3d7800bb6295fa",
+    "url": "/react-learnspace/static/js/runtime~main.cb71cd3d.js"
   },
   {
     "revision": "2fa8ffce2fd493f06351",
@@ -32,8 +32,8 @@ self.__precacheManifest = [
     "url": "/react-learnspace/static/js/7.b92ce108.chunk.js"
   },
   {
-    "revision": "def8b08d7a1b59f0ebce",
-    "url": "/react-learnspace/static/js/6.def8b08d.chunk.js"
+    "revision": "3b3c2ac8a4a0ad9f8eb9",
+    "url": "/react-learnspace/static/js/6.3b3c2ac8.chunk.js"
   },
   {
     "revision": "81d10cbd73e4d4974ab6",
@@ -56,7 +56,7 @@ self.__precacheManifest = [
     "url": "/react-learnspace/static/css/2.b70d372a.chunk.css"
   },
   {
-    "revision": "10a81571e79349e0abe3f732fab35d03",
+    "revision": "ed9b98e84adc6d751f48e5ec0e095ad0",
     "url": "/react-learnspace/index.html"
   }
 ];
