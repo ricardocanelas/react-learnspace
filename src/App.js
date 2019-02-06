@@ -6,6 +6,7 @@ const list = {
     e02: { id: 'e02', title: 'Render Props', src: React.lazy(() => import('./examples/e02/index')) },
     e03: { id: 'e03', title: 'Context', src: React.lazy(() => import('./examples/e03/index')) },
     e04: { id: 'e04', title: 'Lifting State Up', src: React.lazy(() => import('./examples/e04/index')) },
+    e05: { id: 'e05', title: 'Responsive', src: React.lazy(() => import('./examples/e05/index')) },
 }
 
 const config = localStorage.getItem('learnspace-config')
@@ -44,10 +45,9 @@ class App extends Component {
     }
 
     renderOptions = () => {
-        const current_id = this.state.current ? this.state.current.id : null
         return Object.keys(list).map(key => {
             return (
-                <option key={key} value={key} selected={current_id === key}>
+                <option key={key} value={key}>
                     {list[key].title} ({})
                 </option>
             )
@@ -65,7 +65,7 @@ class App extends Component {
                 <header>
                     <div className="brand">Learnspace</div>
                     <div className="nav">
-                        <select onChange={this.handleSelect}>
+                        <select onChange={this.handleSelect} value={this.state.current ? this.state.current.id : null}>
                             <option value="">-</option>
                             {this.renderOptions()}
                         </select>
