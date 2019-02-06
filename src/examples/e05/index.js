@@ -12,34 +12,32 @@ Responsively.configureBreakpoints({
     sm: { min: '48em', width: '49rem' },
     md: { min: '64em', width: '65rem' },
     lg: { min: '75em', width: '76rem' },
-    hd: { min: '90em', width: '91rem' },
+    hd: { min: '99em', width: '100rem' },
 })
 
 class App extends Component {
     render() {
         return (
-            <div>
-                <Container>
-                    <h1 style={{ padding: '10px 0' }}>Example</h1>
-                    <Row>
-                        <Column xs="12" sm="6" md="3">
-                            <Box background="#757575">A</Box>
-                        </Column>
-                        <Column xs={1} sm={1 / 2} md={1 / 4}>
-                            <Box background="#9e9e9e">B</Box>
-                        </Column>
-                        <Column xs="100%" sm="50%" md="25%" lg="50%">
-                            <Box background="#bdbdbd">C</Box>
-                        </Column>
-                        <Column responsive={{ xs: '12', sm: '6', md: '3', lg: '12' }}>
-                            <Box background="#e0e0e0">D</Box>
-                        </Column>
-                        <Column xs="12" sm="6" md="3" lg="8">
-                            <Box background="#eee">E</Box>
-                        </Column>
-                    </Row>
-                </Container>
-            </div>
+            <Container>
+                <h1 style={{ padding: '10px 0' }}>Example</h1>
+                <Row>
+                    <Column xs="12" sm="6" md="3">
+                        <Box background="#757575">A</Box>
+                    </Column>
+                    <Column xs={1} sm={1 / 2} md={1 / 4}>
+                        <Box background="#9e9e9e">B</Box>
+                    </Column>
+                    <Column xs="100%" sm="50%" md="25%" lg="50%">
+                        <Box background="#bdbdbd">C</Box>
+                    </Column>
+                    <Column responsive={{ xs: '12', sm: '6', md: '3', lg: '12' }}>
+                        <Box background="#e0e0e0">D</Box>
+                    </Column>
+                    <Column xs="12" sm="6" md="3" lg="8" hd="12">
+                        <Box background="#eee">E</Box>
+                    </Column>
+                </Row>
+            </Container>
         )
     }
 }
