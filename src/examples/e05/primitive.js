@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Responsively from './Responsively'
+import Responsively from './responsively'
 
 // Container
 
