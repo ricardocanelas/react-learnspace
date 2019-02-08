@@ -4,7 +4,7 @@ Some examples I've created using [React](https://reactjs.org/). The mainly App f
 
 You can check all examples here: [https://ricardocanelas.github.io/react-learnspace]
 
-React version: 16.6.3
+React version: 16.8.0
 
 ## 📘 Examples
 
