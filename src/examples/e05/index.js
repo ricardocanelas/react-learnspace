@@ -37,6 +37,12 @@ class App extends Component {
                         <Box background="#eee">E</Box>
                     </Column>
                 </Row>
+                <div style={{ padding: '20px 0' }}>
+                    Please check the lastest version in <br />
+                    <a href="https://github.com/ricardocanelas/styled-responsive">
+                        https://github.com/ricardocanelas/styled-responsive
+                    </a>
+                </div>
             </Container>
         )
     }
