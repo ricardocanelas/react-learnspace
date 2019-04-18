@@ -7,6 +7,7 @@ const list = {
     e03: { id: 'e03', title: 'Context', src: React.lazy(() => import('./examples/e03/index')) },
     e04: { id: 'e04', title: 'Lifting State Up', src: React.lazy(() => import('./examples/e04/index')) },
     e05: { id: 'e05', title: 'Responsive', src: React.lazy(() => import('./examples/e05/index')) },
+    e06: { id: 'e06', title: 'Hooks', src: React.lazy(() => import('./examples/e06/index')) },
 }
 
 const config = localStorage.getItem('learnspace-config')
