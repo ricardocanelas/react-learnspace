@@ -4,6 +4,8 @@ import HookUseState from './HookUseState'
 import HookUseEffect from './HookUseEffect'
 import HookUseContext from './HookUseContext'
 import HookUseReducer from './HookUseReducer'
+import HookUserCallback from './HookUseCallback'
+import HookUseRef from './HookUseRef'
 
 import './style.scss'
 
@@ -12,6 +14,8 @@ const list = [
     { id: 'h02', title: 'useEffect', component: HookUseEffect },
     { id: 'h03', title: 'useContext', component: HookUseContext },
     { id: 'h04', title: 'useReducer', component: HookUseReducer },
+    { id: 'h05', title: 'useCallback or useMemo', component: HookUserCallback },
+    { id: 'h06', title: 'useRef', component: HookUseRef },
 ]
 
 const config = localStorage.getItem('learnspace-config-e06')
@@ -55,7 +59,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <h2>Hooks</h2>
+                <h1>Hooks</h1>
                 <select onChange={this.handleChange} value={this.state.current.id}>
                     <option value="">- choose -</option>
                     {list.map(item => (

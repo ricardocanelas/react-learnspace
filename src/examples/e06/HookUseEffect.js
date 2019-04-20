@@ -44,7 +44,12 @@ function ExampleEffect() {
 
     console.log('🥤 HookUseEffect | Render')
 
-    return <div>Effect {count}</div>
+    return (
+        <div>
+            <h2>UseEffect</h2>
+            {count}
+        </div>
+    )
 }
 
 export default ExampleEffect

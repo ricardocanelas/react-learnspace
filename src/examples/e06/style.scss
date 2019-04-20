@@ -1,10 +1,17 @@
 .example-container.app-e06 {
     padding: 20px 0 0 20px;
 
+    h1{
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 16px;
+    }
+
     h2{
         font-size: 20px;
         font-weight: bold;
         margin-bottom: 10px;
+        color: blue;
     }
 
     .wrapper-component {
@@ -16,7 +23,12 @@
             display: flex;
             border-bottom: 1px solid #ccc;
             padding-bottom: 10px;
-            margin-bottom: 10px;
+            margin-top: 10px;
+            padding: 5px 0 5px 5px;
+            background: whitesmoke;
+            .description {
+                padding-left: 10px;
+            }
         }
     }
 }

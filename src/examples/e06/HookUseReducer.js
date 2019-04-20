@@ -40,7 +40,7 @@ function ExampleReducer() {
 
     return (
         <div>
-            <h2>Reducer</h2>
+            <h2>UseReducer</h2>
 
             <input value={value} onChange={handleChange} />
             <button onClick={handleClick}>Add</button>
