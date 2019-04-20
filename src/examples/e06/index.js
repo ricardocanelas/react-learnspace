@@ -1,23 +1,41 @@
 import React, { Component } from 'react'
 
+import HookUseState from './HookUseState'
+import HookUseEffect from './HookUseEffect'
+import HookUseContext from './HookUseContext'
+import HookUseReducer from './HookUseReducer'
+
 import './style.scss'
 
-const list = []
+const list = [
+    { id: 'h01', title: 'useState', component: HookUseState },
+    { id: 'h02', title: 'useEffect', component: HookUseEffect },
+    { id: 'h03', title: 'useContext', component: HookUseContext },
+    { id: 'h04', title: 'useReducer', component: HookUseReducer },
+]
+
+const config = localStorage.getItem('learnspace-config-e06')
+    ? JSON.parse(localStorage.getItem('learnspace-config-e06'))
+    : { selected: null }
 
 class App extends Component {
     state = {
         current: { id: '' },
     }
 
-    handleClick = item => {
-        console.log(item)
-        this.setState({ screen: item })
+    componentDidMount() {
+        if (config.selected !== null) this.selectBy(config.selected)
+    }
+
+    selectBy = id => {
+        const item = list.find(item => item.id === id)
+        this.setState({ current: item })
+        localStorage.setItem('learnspace-config-e06', JSON.stringify({ selected: id }))
     }
 
     handleChange = e => {
         const id = e.target.value
-        const item = list.find(item => item.id === id)
-        this.setState({ current: item })
+        this.selectBy(id)
     }
 
     renderCurrentComponent = () => {
