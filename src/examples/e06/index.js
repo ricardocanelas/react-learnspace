@@ -6,6 +6,7 @@ import HookUseContext from './HookUseContext'
 import HookUseReducer from './HookUseReducer'
 import HookUserCallback from './HookUseCallback'
 import HookUseRef from './HookUseRef'
+import HookUseFetch from './HookUseFetch'
 
 import './style.scss'
 
@@ -16,6 +17,7 @@ const list = [
     { id: 'h04', title: 'useReducer', component: HookUseReducer },
     { id: 'h05', title: 'useCallback or useMemo', component: HookUserCallback },
     { id: 'h06', title: 'useRef', component: HookUseRef },
+    { id: 'h07', title: 'custom: useFetch', component: HookUseFetch },
 ]
 
 const config = localStorage.getItem('learnspace-config-e06')
