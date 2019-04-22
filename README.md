@@ -4,7 +4,7 @@ Some examples I've created using [React](https://reactjs.org/). The mainly App f
 
 You can check all examples here: [https://ricardocanelas.github.io/react-learnspace]
 
-React version: 16.8.0
+React version: 16.8.6
 
 ## 📘 Examples
 
@@ -15,11 +15,13 @@ React version: 16.8.0
 | [e03] | Context                                           |
 | [e04] | Lifting State Up                                  |
 | [e05] | Responsive                                        |
+| [e06] | Hooks                                             |
 
 [e01]: https://github.com/ricardocanelas/react-learnspace/tree/master/src/examples/e01
 [e02]: https://github.com/ricardocanelas/react-learnspace/tree/master/src/examples/e02
 [e03]: https://github.com/ricardocanelas/react-learnspace/tree/master/src/examples/e03
 [e04]: https://github.com/ricardocanelas/react-learnspace/tree/master/src/examples/e04
 [e05]: https://github.com/ricardocanelas/react-learnspace/tree/master/src/examples/e05
+[e06]: https://github.com/ricardocanelas/react-learnspace/tree/master/src/examples/e06
 
 [https://ricardocanelas.github.io/react-learnspace]: https://ricardocanelas.github.io/react-learnspace/
