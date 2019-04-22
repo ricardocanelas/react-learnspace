@@ -8,6 +8,7 @@ import HookUserCallback from './HookUseCallback'
 import HookUseRef from './HookUseRef'
 import HookUseFetch from './HookUseFetch'
 import HookUseSlider from './HookUseSlider'
+import HookUseDebounce from './HookUseDebounce'
 
 import './style.scss'
 
@@ -20,6 +21,7 @@ const list = [
     { id: 'h06', title: 'useRef', component: HookUseRef },
     { id: 'h07', title: 'custom: useFetch', component: HookUseFetch },
     { id: 'h08', title: 'custom: useSlider', component: HookUseSlider },
+    { id: 'h09', title: 'custom: useDebounce', component: HookUseDebounce },
 ]
 
 const config = localStorage.getItem('learnspace-config-e06')
