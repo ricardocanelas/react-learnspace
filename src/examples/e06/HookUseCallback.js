@@ -14,21 +14,39 @@ const randomNumber = function() {
 const ExampleCallback = () => {
     const [random1, setRandom1] = useState(1)
     const [random2, setRandom2] = useState(2)
+    const [random3, setRandom3] = useState(3)
+
+    const rand = Math.random()
 
     const handleClick = useCallback(() => {
+        console.log(`rand (${rand})  (same value)`)
         setRandom1(randomNumber)
-    }, [random1])
+    }, [rand])
+
+    console.log('🍧 HookUseCallback | Render')
 
     return (
         <div>
             <h2>UseCallback</h2>
+
             {/*Optimize*/}
             <CompRandom label={`A-${random1}`} onClick={handleClick} />
+
             {/*Not-Optimize*/}
             <CompRandom
                 label={`B-${random2}`}
                 onClick={() => {
+                    console.log(`rand (${rand}) (always a new value)`)
                     setRandom2(randomNumber())
+                }}
+            />
+
+            {/*Not-Optimize*/}
+            <CompRandom
+                label={`C-${random3}`}
+                onClick={() => {
+                    console.log(`rand (${rand}) (always a new value)`)
+                    setRandom3(randomNumber())
                 }}
             />
         </div>
@@ -36,7 +54,7 @@ const ExampleCallback = () => {
 }
 
 const CompRandom = React.memo(props => {
-    console.log('🍧 HookUseCallback | Render', props.label)
+    console.log('🍧 HookUseCallback | Render | CompRandom | ', props.label)
     return <button onClick={props.onClick}>{props.label}</button>
 })
 

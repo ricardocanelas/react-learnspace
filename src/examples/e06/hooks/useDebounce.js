@@ -7,7 +7,7 @@ export const useDebounceCallback = (fn, delay, deps = []) => {
     const cancelDebounce = useCallback(() => {
         clearTimeout(functionTimeoutHandler.current)
         functionTimeoutHandler.current = null
-    }, [functionTimeoutHandler.current])
+    }, [])
 
     const debouncedCallback = useCallback(
         (...args) => {
@@ -17,7 +17,7 @@ export const useDebounceCallback = (fn, delay, deps = []) => {
                 cancelDebounce()
             }, delay)
         },
-        [debouncedFunction, delay]
+        [cancelDebounce, debouncedFunction, delay]
     )
 
     return [debouncedCallback, cancelDebounce]

@@ -87,7 +87,7 @@ const useSlider = (total, time) => {
         return () => {
             clearInterval(interval)
         }
-    }, [state.current, state.isPause])
+    }, [state, time])
 
     useEffect(() => {
         let totalSafe = total

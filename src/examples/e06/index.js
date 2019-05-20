@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import HookUseState from './HookUseState'
 import HookUseEffect from './HookUseEffect'
 import HookUseContext from './HookUseContext'
+import HookUseContext2 from './HookUseContext2'
 import HookUseReducer from './HookUseReducer'
 import HookUserCallback from './HookUseCallback'
 import HookUseRef from './HookUseRef'
@@ -16,6 +17,7 @@ const list = [
     { id: 'h01', title: 'useState', component: HookUseState },
     { id: 'h02', title: 'useEffect', component: HookUseEffect },
     { id: 'h03', title: 'useContext', component: HookUseContext },
+    { id: 'h03_2', title: 'useContext 2', component: HookUseContext2 },
     { id: 'h04', title: 'useReducer', component: HookUseReducer },
     { id: 'h05', title: 'useCallback or useMemo', component: HookUserCallback },
     { id: 'h06', title: 'useRef', component: HookUseRef },
